@@ -1,0 +1,6 @@
+[server]
+maxUploadSize = 20        # MB, pacs/validation.py 의 MAX_FILE_BYTES 와 맞추기
+headless = true
+
+[browser]
+gatherUsageStats = false

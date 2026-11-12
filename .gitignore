@@ -1,0 +1,20 @@
+# 비밀값 — 절대 커밋 금지
+.streamlit/secrets.toml
+*serviceAccount*.json
+*-firebase-adminsdk-*.json
+.env
+
+# 영상 저장소·로컬 데이터
+data/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# OS·IDE
+.DS_Store
+.idea/
+.vscode/

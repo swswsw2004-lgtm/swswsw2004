@@ -1,0 +1,20 @@
+# JCloud(Linux VM)에서 앱을 서비스로 상시 실행하기 위한 systemd 예시.
+# 경로·사용자명은 실제 환경에 맞게 수정하세요. 수업에서 안내한 JCloud 배포 방식이 따로 있으면 그쪽을 우선합니다.
+#
+# 설치: sudo cp deploy/pacs.service /etc/systemd/system/
+#       sudo systemctl daemon-reload && sudo systemctl enable --now pacs
+# 로그: journalctl -u pacs -f
+
+[Unit]
+Description=Educational Web PACS (Streamlit)
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/swswsw2004
+ExecStart=/home/ubuntu/swswsw2004/.venv/bin/streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

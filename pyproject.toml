@@ -1,0 +1,29 @@
+[project]
+name = "edu-web-pacs"
+version = "0.1.0"
+description = "영상처리 기능을 갖춘 교육용 웹 PACS (초급프로젝트 PBL Term Project)"
+readme = "README.md"
+authors = [
+    { name = "초급프로젝트 PBL 팀" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit==1.67.0",
+    "firebase-admin==7.8.0",
+    "opencv-python-headless>=4.10",
+    "numpy>=2.0",
+    "pandas>=2.2",
+    "requests>=2.32",
+    "pydicom>=3.0.2",  # DICOM 지원을 범위에 넣을 경우 사용
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.uv]
+package = false  # 라이브러리가 아닌 Streamlit 앱이므로 패키지 빌드 없이 실행
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
